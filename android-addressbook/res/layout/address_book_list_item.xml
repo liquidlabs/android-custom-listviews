@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  	
+  style="@style/AddressBookListItem"
+  >
+  
+  	<TextView
+  		android:id="@+id/address_book_item_name"
+  		style="@style/AddressBookItemName"
+  		android:text="Name"
+  		
+  		android:layout_alignParentTop="true"
+  		android:layout_alignParentLeft="true"
+  	/>	
+  
+  
+  	<ImageView
+  		android:id="@+id/address_book_item_email"
+  		style="@style/AddressBookImageItem"
+  		
+  		android:src="@drawable/ic_list_email"
+  		android:contentDescription="Email"
+  		
+  		android:layout_alignParentTop="true"
+  		android:layout_alignParentRight="true"
+  	/>
+  	
+  	
+  	<ImageView
+  		android:id="@+id/address_book_item_call"
+  		style="@style/AddressBookImageItem"
+  		
+  		android:src="@drawable/ic_list_call"
+  		android:text="Phone Call"
+  		
+  		android:layout_alignParentTop="true"
+  		android:layout_toLeftOf="@id/address_book_item_email"
+  	/>
+  
+</RelativeLayout>

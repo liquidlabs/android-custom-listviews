@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="address_book_label">Below are the list of your contacts</string>
+    <string name="app_name">Address Book Sample</string>
+    
+    <string name="email_client_error">No Email client found</string>
+    <string name="email_subject">Android Email</string>
+</resources>

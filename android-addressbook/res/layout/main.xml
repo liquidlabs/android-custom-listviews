@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LayoutWrap"
+   	>
+	
+	<TextView
+		android:id="@+id/address_book_label"
+		style="@style/AddressBookLabel"
+		
+		android:text="@string/address_book_label"			  
+    />
+    
+    <ListView
+    	android:id="@+id/address_book_listview"
+    	style="@style/AddressBookList"    	
+    />	
+    
+</LinearLayout>
