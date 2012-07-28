@@ -1,3 +1,15 @@
+/**
+ * A Custom Adapter which is used in List Views
+ * This Adapter uses a static inner class to hold the Views
+ * of each List View Item for faster performance as per Google
+ * Guideline
+ * 
+ * @author Abdullah Rubiyath
+ * @copyright 2011 Liquid Labs Inc.
+ * 
+ * Released under MIT License
+ *
+ */
 package ca.liquidlabs.addressbook;
 
 import info.itsalif.addressbook.R;
@@ -21,13 +33,15 @@ public class SimpleAddressBookAdapter extends SimpleAdapter {
 	private static Context context; 
 	private static int resource;
 	
+	/* Stores the list of resources */
 	protected static int[] resourceList;
 	protected static String[] fromList;
 	
 	protected static int callResource = R.id.address_book_item_call;
 	protected static int emailResource = R.id.address_book_item_email;
 
-	
+	/* A Static class for holding the elements of each List View Item
+	 * This is created as per Google UI Guideline for faster performance */
 	private static class ViewHolder
 	{
 		TextView[] textView;		
@@ -68,7 +82,9 @@ public class SimpleAddressBookAdapter extends SimpleAdapter {
 		
 		if (convertView == null) 
 		{
-			LayoutInflater mInflater = (LayoutInflater) SimpleAddressBookAdapter.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater mInflater = (LayoutInflater) SimpleAddressBookAdapter.context
+										.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+										
 			convertView = mInflater.inflate(SimpleAddressBookAdapter.resource, parent, false);
 						
 			holder = new ViewHolder();	
@@ -107,19 +123,22 @@ public class SimpleAddressBookAdapter extends SimpleAdapter {
 				
 			});
 			
+			// store it in a Tag as its the first time this view is generated
 			convertView.setTag(holder);
 			
 		}
 		else {
+			/* get the View from the existing Tag */
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
+		/* update the textView's text for this list view item/element */
 		for (int i = 0; i < fromList.length; i++) {
-			holder.textView[i].setText(SimpleAddressBookAdapter.listMap.get(position).get(fromList[i]));
+			holder.textView[i].setText(listMap.get(position).get(fromList[i]));
 		}
 		
+		// store the position/index for this list view element/item
 		holder.position = position;
-		
 		
 		return convertView;
 	}	

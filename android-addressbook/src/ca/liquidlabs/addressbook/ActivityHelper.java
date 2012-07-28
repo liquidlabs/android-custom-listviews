@@ -1,3 +1,13 @@
+/**
+ * An Activity Helper class which keeps track of currrent
+ * running Activity and facilitates starting another Activity.
+ *
+ * @author Abdullah Rubiyath
+ * @copyright 2011 Liquid Labs Inc.
+ * 
+ * Released under MIT License
+ */
+
 package ca.liquidlabs.addressbook;
 
 import info.itsalif.addressbook.R;
@@ -23,8 +33,10 @@ public class ActivityHelper {
 	 */
 	public static void startActivity(byte type, String data) {
 		
+		// if there's no current Activity, then return
 		if (ActivityHelper.currentActivity == null) return;
 		
+		// if its a phone call (user tapped telephone icon)
 		if (type == ActivityHelper.PHONE_CALL) {
 			// make the call			
 			ActivityHelper.currentActivity

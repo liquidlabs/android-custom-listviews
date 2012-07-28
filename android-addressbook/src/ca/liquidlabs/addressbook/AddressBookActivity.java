@@ -1,3 +1,15 @@
+/**
+ * The Main Activity of the Sample App.
+ * It shows a list view of People's Name with and telephone icon and email icon.
+ * - Tapping on telephone icon initiates a phone call
+ * - Tapping on email icon starts the email client on the phone
+ *
+ * @author Abdullah Rubiyath
+ * @copyright 2011 Liquid Labs Inc.
+ *
+ * Released under MIT License
+ */
+
 package ca.liquidlabs.addressbook;
 
 import info.itsalif.addressbook.R;
@@ -28,9 +40,10 @@ public class AddressBookActivity extends Activity {
         this.initAddressBookData();
         this.initListView();
     }
-    
+ 
+ 
     /**
-     * Initialize the Address Book Data with some values
+     * Initialize the Address Book Data with some dummy values
      */
     public void initAddressBookData() {
     	this.addressList = new ArrayList<HashMap<String, String>>();
